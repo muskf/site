@@ -1,0 +1,441 @@
+:root {
+    --selection-color: #64f5ff;
+}
+
+*::selection {
+    background-color: inherit;
+    color: var(--selection-color);
+}
+
+@font-face {
+    font-family: xirod;
+    src:url("fonts/xirod.otf");
+}
+
+@font-face {
+    font-family: dingtalk;
+    src:url("fonts/DingTalkJinBuTi-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: overtaking;
+    src:url("fonts/OvertakingItalic-L3KX5.otf");
+}
+
+@font-face {
+    font-family: boombox;
+    src:url("fonts/BoomboxFree-axW1K.otf");
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    cursor: url('assets/Precision\ Select.cur'), auto;
+}
+
+a:hover {
+    cursor: url('assets/Text\ Select.cur'), pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.background {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: xirod;
+    font-size: 50px;
+    line-height: 1.1;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.button-wrapper-social {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    display: flex;
+    gap: 50px;
+}
+
+.button-wrapper-tools {
+    margin-bottom: 200px;
+    display:grid;
+    gap: 50px;
+}
+
+.button:link,
+.button:visited {
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 23px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    border: #fff 2px solid;
+    transition: background-color .3s, border-color .3s, transform .3s;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button:hover,
+.button:active {
+    border-color: rgb(100, 245, 255);
+    background-color: rgba(100, 245, 255, .2);
+    transform: scale(1.15);
+}
+
+.button__icon {
+    width: 35px;
+    height: 35px;
+}
+
+.button_text_social {
+    margin: 0;
+    font-family: overtaking,dingtalk;
+}
+
+.button_text_tools {
+    margin: 0;
+    font-family: boombox;
+}
+
+
+    .slide-in {
+        animation: slideOut 5.5s forwards;
+        font-family: xirod,dingtalk;
+        font-size: 30px;
+        text-align: center;
+        color: #ffffff;
+        -webkit-animation-name: backOutDown;
+        animation-name: backOutDown
+      }
+
+
+      .slide-out {
+        animation: slideOut 5.5s forwards;
+        font-family: xirod,dingtalk;
+        font-size: 30px;
+        text-align: center;
+        color: #ffffff;
+        -webkit-animation-name: backInUp;
+        animation-name: backInUp
+      }
+  
+      
+
+      .slider .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slide img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        opacity: 0;
+        transition: .5s ease;
+    }
+    
+    .slide.active img {
+        opacity: 1;
+    }
+    
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: red; */
+        transform: translateX(-100%);
+        transition: 0;
+    }
+    
+    .slide.active {
+        transform: translateX(0);
+        z-index: -1;
+        transition: 1s ease;
+    }
+    
+    
+    
+    .slide {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        /* background: red; */
+        display: flex;
+        align-items: center;
+        transform: translateX(100%);
+        transition: 0s;
+    }
+    
+    .slide.active {
+        transform: translateX(0);
+        transition: 1s ease;
+    }
+
+    .navigation {
+        position: absolute;
+        bottom: 8%;
+        right: 5%;
+        z-index: 100;
+    }
+    
+    .navigation span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        margin-left: 25px;
+        transition: .3s;
+    }
+    
+    .navigation span:nth-child(1) {
+        background: transparent;
+    }
+    
+    .navigation span:nth-child(1):hover {
+        background: #dfdfdf;
+    }
+    
+    .navigation span i {
+        font-size: 45px;
+        color: #444;
+        transition: .4s;
+    }
+    
+    .navigation span:nth-child(1) i {
+        color: #fff;
+    }
+    
+    .navigation span:nth-child(1):hover i {
+        color: #444;
+    }
+
+/* loading.css */
+.spinner {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: calc(50% - 64px);
+    left: calc(50% - 64px);
+    transform: perspective(206px) rotateX(45deg);
+    
+  }
+  
+  .outer {
+    box-sizing: border-box;
+    animation: spin 3s linear infinite;
+    height: 100%;
+  }
+  
+  .inner {
+    position: absolute;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    animation: spin 1.8s ease-in-out infinite;
+  }
+  .inner.tl {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #531430;
+    border-left: 4px solid #531430;
+  }
+  .inner.tr {
+    top: 0;
+    right: 0;
+    border-top: 2px solid #e04960;
+    border-right: 4px solid #e04960;
+  }
+  .inner.br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #531430;
+    border-right: 4px solid #531430;
+  }
+  .inner.bl {
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid #e04960;
+    border-left: 4px solid #e04960;
+  }
+
+
+  .footer {
+    display: block;
+    position: absolute;
+    left:0px ;
+    bottom: 0px;
+  }
+  .copyright {
+    font-family: xirod,dingtalk;
+    font-size: 10px;
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+      @media only screen and (max-width: 500px) {
+        .title {
+            font-size: 30px;
+        }
+    }
+    
+    @media only screen and (max-width: 350px) {
+        .title {
+            font-size: 25px;
+        }
+    }
+    
+    @media only screen and (max-width: 450px) {
+        .button-wrapper {
+            flex-direction: column;
+        }
+    }
+    
+    @keyframes rainbow {
+        0% {
+            background-position: 0 82%
+        }
+        50% {
+            background-position: 100% 19%
+        }
+        100% {
+            background-position: 0 82%
+        }
+    }
+      
+      @-webkit-keyframes backOutDown {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    
+        20% {
+            -webkit-transform: translateY(0) scale(.7);
+            transform: translateY(0) scale(.7);
+            opacity: .7
+        }
+    
+        to {
+            -webkit-transform: translateY(700px) scale(.7);
+            transform: translateY(700px) scale(.7);
+            opacity: .7
+        }
+    }
+    
+    @keyframes backOutDown {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    
+        20% {
+            -webkit-transform: translateY(0) scale(.7);
+            transform: translateY(0) scale(.7);
+            opacity: .7
+        }
+    
+        to {
+            -webkit-transform: translateY(700px) scale(.7);
+            transform: translateY(700px) scale(.7);
+            opacity: .7
+        }
+    }
+
+
+      @-webkit-keyframes backInUp {
+        0% {
+            -webkit-transform: translateY(1200px) scale(.7);
+            transform: translateY(1200px) scale(.7);
+            opacity: .7
+        }
+    
+        80% {
+            -webkit-transform: translateY(0) scale(.7);
+            transform: translateY(0) scale(.7);
+            opacity: .7
+        }
+    
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
+    
+    @keyframes backInUp {
+        0% {
+            -webkit-transform: translateY(1200px) scale(.7);
+            transform: translateY(1200px) scale(.7);
+            opacity: .7
+        }
+    
+        80% {
+            -webkit-transform: translateY(0) scale(.7);
+            transform: translateY(0) scale(.7);
+            opacity: .7
+        }
+    
+        to {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
