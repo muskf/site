@@ -315,11 +315,84 @@ a:hover {
     bottom: 0px;
   }
   .copyright {
-    font-family: xirod,dingtalk;
+    font-family: dingtalk;
     font-size: 10px;
     line-height: 1.1;
     color: #fff;
   }
+
+
+    #overlay {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.5);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+        display: none;
+      }
+    
+      .popup {
+        color: #ffffff;
+        background-color: rgba(255,255,255,.2);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 10px #333;
+        background-color: rgba(255,255,255,.2);
+        max-width: 400px;
+        min-width: 200px;
+        height: 560px;
+        border-radius: 5px;
+        margin: 100px auto;
+        text-align: center;
+        animation: fadein .5s;
+      }
+      .popup_title {
+        font-family: overtaking,dingtalk;
+        font-size: 26px;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: solid 1px #cccccc;
+      }
+      .popup_content {
+        height: 50px;
+        line-height: 50px;
+        padding: 15px 20px;
+      }
+      .popup_btn {
+        padding-bottom: 10px;
+      }
+      .popup_btn button {
+        font-family: xirod,dingtalk;
+        width: 40%;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px 10px;
+        overflow: hidden;
+        position: relative;
+        background-color:dodgerblue;
+        color:white;
+        border:0;
+        font-size: 16px;			
+        border-radius: 30px;
+      }
+    .wechat-code {
+        margin-bottom: 15px;
+        width: 256px;
+        height: 300px;
+    }    
+
+
+    @keyframes fadein {
+        0% {
+            transform: translate(0, -100%);
+        }
+        100% {
+            transform: none;
+        }
+    }
 
   @keyframes spin {
     0% {

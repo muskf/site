@@ -6,5 +6,9 @@
   "homepage.tools.cloudreve": "Cloudreve",
   "homepage.tools.alist": "Alist",
   "intro.text": "摄影爱好者",
-  "homepage.copyright": "图片版权归ggken所有"
+  "homepage.copyright": "背景图片版权归ggken所有",
+  "homepage.wechat": "微信",
+  "wechat.title": "微信",
+  "wechat.id": "微信号:ggkknh",
+  "wechat.enter": "确定"
 }

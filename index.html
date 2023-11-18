@@ -36,6 +36,17 @@
                data-i18n="homepage.discord" target="_blank"></a>
             <a href="mailto:admin@lunarcn.top" class="button_text_social" data-i18n="homepage.email"
                target="_blank"></a>
+            <a class="button_text_social" id="showPopup" onclick="showPopup()" data-i18n="homepage.wechat"></a>
+            <div id="overlay">
+                <div class="popup">
+                    <p class="popup_title" data-i18n="wechat.title"></p>
+                    <p class="popup_content" data-i18n="wechat.id"></p>
+                    <img class="wechat-code" src="assets/wechat-code.png">
+                    <div class="popup_btn">
+                        <button class="confirmBtn" onclick="hidePopup()" data-i18n="wechat.enter"></button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
